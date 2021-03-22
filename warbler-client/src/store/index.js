@@ -10,9 +10,10 @@ export function configureStore() {
     rootReducer,
     compose(
       applyMiddleware(thunk),
+      // for debugging our application in the redux web tools
       window.devToolsExtension ? window.devToolsExtension() : f => f
     )
   );
-
+// return that store
   return store;
 }
